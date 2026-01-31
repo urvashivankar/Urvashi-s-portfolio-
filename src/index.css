@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0ea5e9;
+  --color-secondary: #6366f1;
+  --font-grotesk: "Space Grotesk", sans-serif;
+  --font-inter: "Inter", sans-serif;
+}
+
+/* Dark theme only - optimized for readability */
+:root {
+  --bg-main: #020617;
+  --text-main: #f1f5f9;
+  --text-muted: #94a3b8;
+  --text-dimmed: #64748b;
+  --glass-bg: rgba(15, 23, 42, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --card-bg: #0f172a;
+  --shadow-color: rgba(0, 0, 0, 0.4);
+  --overlay-gradient: linear-gradient(to bottom, rgba(2, 6, 23, 0.95), rgba(15, 23, 42, 0.97));
+}
+
+@layer base {
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    @apply font-inter relative min-h-screen;
+    background-image: var(--overlay-gradient), url('./assets/background_v2.png');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-grotesk;
+  }
+}
+
+@layer components {
+  .glass {
+    background-color: var(--glass-bg);
+    border-color: var(--glass-border);
+    @apply backdrop-blur-xl border rounded-2xl shadow-xl transition-all duration-300;
+  }
+
+  .glass:hover {
+    @apply border-primary/30 -translate-y-1 shadow-2xl;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-5xl font-grotesk font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary text-center mb-12;
+  }
+
+  .text-gradient {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary;
+  }
+
+  .max-readable {
+    @apply max-w-3xl mx-auto;
+  }
+}
+
+.reveal-up {
+  opacity: 0;
+  transform: translateY(30px);
+}
