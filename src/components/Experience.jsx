@@ -29,7 +29,7 @@ const experiences = [
     {
         title: "Coordinated CII AND YI events",
         type: "Event Coordinator",
-        period: "2023 - 2024",
+        period: "2025",
         outcome: "Led and coordinated high-impact events for the Confederation of Indian Industry (CII) and Young Indians (YI). Managed end-to-end logistics, team coordination, and stakeholder engagement for professional networking and community initiatives.",
         icon: <Users size={20} />,
         color: "bg-orange-500/10"
