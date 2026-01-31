@@ -5,7 +5,7 @@ const experiences = [
     {
         title: "AQUA GUARDIAN - State Innovation Showcase",
         type: "Production AI System",
-        period: "2024",
+        period: "2025 - 2026",
         outcome: "Architected and deployed full-stack AI validation system for government water pollution reporting. Recognized as top civic innovation project for production-ready implementation and 70% reduction in manual validation time.",
         icon: <Star size={20} />,
         color: "bg-blue-500/10"
