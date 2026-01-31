@@ -27,11 +27,11 @@ const experiences = [
         color: "bg-purple-500/10"
     },
     {
-        title: "University Hackathons",
-        type: "Team Lead & Full-Stack Architect",
-        period: "2023 - 2024",
-        outcome: "Led teams to top-3 finishes by architecting complete AI applications under 24-hour constraints. Delivered working products with frontend, backend, AI integration, and deployment.",
-        icon: <Award size={20} />,
+        title: "Coordinated CII AND YI events",
+        type: "Event Coordinator",
+        period: "2025",
+        outcome: "Led and coordinated high-impact events for the Confederation of Indian Industry (CII) and Young Indians (YI). Managed end-to-end logistics, team coordination, and stakeholder engagement for professional networking and community initiatives.",
+        icon: <Users size={20} />,
         color: "bg-orange-500/10"
     },
     {
