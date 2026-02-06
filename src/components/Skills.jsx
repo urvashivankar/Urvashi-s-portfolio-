@@ -5,35 +5,35 @@ const skills = [
     {
         category: "Frontend Development",
         icon: <Globe size={20} />,
-        items: ["React", "Next.js", "Framer Motion", "Tailwind CSS", "JavaScript", "HTML/CSS"],
-        description: "Modern, responsive web applications with seamless AI integration and premium UX.",
+        items: ["React", "Next.js", "Framer Motion", "Tailwind CSS", "JavaScript"],
+        description: "Responsive web applications with seamless AI integration.",
         primary: false
     },
     {
         category: "Backend Development",
         icon: <Database size={20} />,
-        items: ["FastAPI", "Node.js", "Express.js", "PostgreSQL", "Supabase", "REST APIs"],
-        description: "High-performance APIs and server-side logic for scalable AI applications."
+        items: ["FastAPI", "Node.js", "PostgreSQL", "Supabase", "REST APIs"],
+        description: "Scalable server-side logic and high-performance APIs."
     },
     {
         category: "AI Integration",
         icon: <Brain size={20} />,
-        items: ["LLM APIs", "Gemini", "Llama Vision", "RAG Systems", "Prompt Engineering", "Python"],
-        description: "Production AI systems with LLMs, vision models, and intelligent automation.",
+        items: ["LLM APIs", "Gemini", "RAG Systems", "Prompt Engineering", "Python"],
+        description: "Production-ready AI systems with intelligent automation.",
         primary: true
     },
     {
         category: "Deployment & DevOps",
         icon: <Zap size={20} />,
         items: ["Docker", "Git", "Vercel", "Render", "n8n", "MLOps"],
-        description: "Containerization, CI/CD workflows, and production deployment pipelines."
+        description: "CI/CD workflows and production deployment pipelines."
     }
 ];
 
 const Skills = () => {
     return (
         <section id="skills" className="py-24 relative bg-slate-900/20">
-            <div className="container mx-auto px-6 text-center lg:text-left">
+            <div className="container mx-auto px-6 md:px-12 lg:px-20 text-center lg:text-left">
                 <div className="mb-20 flex flex-col lg:flex-row justify-between items-end gap-10">
                     <div className="max-w-2xl">
                         <motion.p

@@ -36,7 +36,7 @@ const Contact = () => {
 
     return (
         <section id="contact" className="py-24 relative overflow-hidden bg-slate-100/30">
-            <div className="container mx-auto px-6">
+            <div className="container mx-auto px-6 md:px-12 lg:px-20">
                 <div className="grid lg:grid-cols-2 gap-20 items-center">
 
                     <motion.div
@@ -47,7 +47,7 @@ const Contact = () => {
                     >
                         <p className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4">Contact</p>
                         <h2 className="text-3xl md:text-5xl font-grotesk font-bold text-white mb-8 tracking-tighter leading-none">
-                            Let's Start a <br /><span className="text-gradient">Conversation.</span>
+                            Let's <span className="text-gradient">Connect.</span>
                         </h2>
                         <p className="text-slate-400 text-lg md:text-xl mb-12 max-w-md font-inter font-light leading-relaxed">
                             Open to <strong className="text-white">internships, collaborations & real world projects</strong>. Let's build something that matters.

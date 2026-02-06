@@ -97,7 +97,7 @@ const certificates = [
 const Certificates = () => {
     return (
         <section id="certificates" className="py-24 bg-slate-900/20">
-            <div className="container mx-auto px-6">
+            <div className="container mx-auto px-6 md:px-12 lg:px-20">
                 <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
                     <div>
                         <motion.p

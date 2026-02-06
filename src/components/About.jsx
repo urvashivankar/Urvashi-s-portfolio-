@@ -39,8 +39,8 @@ const About = () => {
 
     return (
         <section id="about" className="py-24 relative overflow-hidden">
-            <div className="container mx-auto px-6">
-                <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+            <div className="container mx-auto px-6 md:px-12 lg:px-20">
+                <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -48,44 +48,25 @@ const About = () => {
                         transition={{ duration: 0.8 }}
                     >
                         <h2 className="text-3xl md:text-5xl font-grotesk font-bold text-white mb-4">About Me</h2>
-                        <p className="text-primary font-bold tracking-widest uppercase text-sm">Building AI Products End-to-End</p>
-                    </motion.div>
-                    <motion.div
-                        initial={{ opacity: 0, x: 30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
-                        className="max-w-xl text-slate-400 text-lg md:text-right"
-                    >
-                        I build complete AI products: React frontends, FastAPI backends, AI model integration, and production deployment.
+                        <p className="text-primary font-bold tracking-widest uppercase text-sm">Namaste, I'm Urvashi Vankar</p>
                     </motion.div>
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-6">
-                    {/* Main Bio Card */}
+                <div className="grid md:grid-cols-4 gap-6">
+                    {/* Main Bio Card (Simplified) */}
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="md:col-span-2 glass p-8 md:p-12 relative overflow-hidden group"
+                        className="md:col-span-4 glass p-8 relative overflow-hidden group"
                     >
                         <div className="relative z-10">
-                            <h3 className="text-2xl font-bold font-grotesk mb-8 text-white">Namaste! 🙏</h3>
-                            <div className="text-slate-300 space-y-6 text-xl md:text-2xl leading-relaxed font-inter font-light">
-                                <p>
-                                    I'm <strong className="text-primary font-bold">Urvashi Vankar</strong>, a Full-Stack AI Developer who ships complete AI applications. From React frontends to FastAPI backends, AI model integration to production deployment. I don't just build interfaces or train models. <span className="text-white font-medium">I architect the entire stack.</span>
-                                </p>
-                                <p className="text-slate-400">
-                                    After becoming a full-stack AI developer, I'm focusing on <strong className="text-secondary font-semibold">AI system design, scalable AI architectures, and MLOps</strong> to build reliable, production-ready AI platforms.
-                                </p>
-                            </div>
-                            <div className="mt-8 pt-8 border-t border-white/10 flex items-center gap-4 text-slate-400 text-sm">
-                                <span className="font-bold uppercase tracking-widest text-[10px]">Languages:</span>
-                                <span className="text-slate-400">English, Gujarati, Hindi</span>
-                            </div>
+                            <h3 className="text-2xl font-bold font-grotesk mb-4 text-white">Full-Stack AI Developer</h3>
+                            <p className="text-slate-400 text-lg leading-relaxed font-inter font-light">
+                                I architect entire AI stacks—from responsive React frontends to robust FastAPI backends and integrated LLM systems.
+                            </p>
                         </div>
-                        <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-primary/10 transition-colors duration-700"></div>
                     </motion.div>
 
                     {/* What I Do - Bento Grid Sections */}
@@ -96,7 +77,7 @@ const About = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, delay: index * 0.1 }}
-                            className={`glass p-8 relative overflow-hidden group flex flex-col justify-between ${item.span}`}
+                            className={`glass p-8 relative overflow-hidden group flex flex-col justify-between`}
                         >
                             <div className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
                             <div className="relative z-10">

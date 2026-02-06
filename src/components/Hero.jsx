@@ -1,6 +1,8 @@
 import { motion, useSpring, useTransform, useMotionValue } from 'framer-motion';
-import { Linkedin, Github, FileText, Send, Twitter, Instagram } from 'lucide-react';
-import { useRef } from 'react';
+import { Linkedin, Github, FileText, Send, Twitter, Instagram, ArrowRight } from 'lucide-react';
+import { useRef, Suspense, lazy } from 'react';
+
+const Spline = lazy(() => import('@splinetool/react-spline'));
 
 const MagneticButton = ({ children, className, href, target }) => {
     const ref = useRef(null);
@@ -60,92 +62,115 @@ const Hero = () => {
     };
 
     return (
-        <section id="home" className="min-h-screen flex items-center relative overflow-hidden pt-24 pb-12">
-            <div className="container mx-auto px-6 relative z-10 text-center">
-                <motion.div
-                    variants={container}
-                    initial="hidden"
-                    animate="show"
-                    className="max-w-6xl mx-auto"
-                >
-                    <motion.h2
-                        variants={item}
-                        className="text-primary font-bold text-sm md:text-base mb-6 tracking-[0.2em] uppercase"
-                    >
-                        Shipping Production AI
-                    </motion.h2>
-
-                    <motion.h1
-                        variants={item}
-                        className="text-3xl md:text-5xl lg:text-6xl font-grotesk mb-10 leading-[1.2] text-white tracking-tighter"
-                    >
-                        <span className="text-gradient">Full-Stack AI Developer</span> <br />
-                        building end-to-end intelligent applications
-                    </motion.h1>
-
-                    <motion.p
-                        variants={item}
-                        className="text-lg md:text-2xl text-slate-400 mb-12 max-w-3xl mx-auto leading-relaxed font-inter font-light"
-                    >
-                        I build AI-powered products from <span className="text-white font-medium">frontend to backend</span>, integrating LLMs, designing scalable APIs, and deploying <span className="text-white font-medium">production-ready systems</span>.
-                    </motion.p>
-
+        <section id="home" className="min-h-screen flex items-center relative overflow-hidden pt-20">
+            <div className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10">
+                <div className="grid lg:grid-cols-2 gap-12 items-center">
+                    {/* Left Side: Content */}
                     <motion.div
-                        variants={item}
-                        className="flex flex-col sm:flex-row items-center justify-center gap-8 mb-16"
+                        variants={container}
+                        initial="hidden"
+                        animate="show"
+                        className="text-left"
                     >
-                        <MagneticButton
-                            href="/urvashi_resume.pdf"
-                            target="_blank"
-                            className="group relative px-10 py-5 bg-white text-slate-900 font-bold rounded-full overflow-hidden transition-all duration-300 hover:text-white hover:text-white"
+                        <motion.h2
+                            variants={item}
+                            className="text-primary font-bold text-sm mb-6 tracking-[0.2em] uppercase"
                         >
-                            <span className="relative z-10 flex items-center gap-2">
-                                <FileText size={20} /> Download Resume
-                            </span>
-                            <div className="absolute inset-0 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-                        </MagneticButton>
+                            Shipping Production AI
+                        </motion.h2>
 
-                        <MagneticButton
-                            href="#contact"
-                            className="group relative px-10 py-5 border border-white/20 text-white font-bold rounded-full overflow-hidden transition-all duration-300 hover:border-primary"
+                        <motion.h1
+                            variants={item}
+                            className="text-4xl md:text-6xl lg:text-7xl font-grotesk mb-8 leading-[1.1] text-white tracking-tighter"
                         >
-                            <span className="relative z-10 flex items-center gap-2">
-                                <Send size={20} /> Open to Opportunities
-                            </span>
-                            <div className="absolute inset-0 bg-white/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-                        </MagneticButton>
-                    </motion.div>
+                            <span className="text-gradient">Full-Stack</span> <br />
+                            AI Developer
+                        </motion.h1>
 
-                    <motion.div
-                        variants={item}
-                        className="flex items-center justify-center gap-10"
-                    >
-                        {[
-                            { icon: <Github size={24} />, href: "https://github.com/urvashivankar" },
-                            { icon: <Linkedin size={24} />, href: "https://www.linkedin.com/in/urvashi-vankar-5229bb272/" },
-                            { icon: <Twitter size={24} />, href: "https://x.com/Urvashi16032005" },
-                            { icon: <Instagram size={24} />, href: "https://www.instagram.com/_urvashiii.05" }
-                        ].map((social, i) => (
-                            <a
-                                key={i}
-                                href={social.href}
+                        <motion.p
+                            variants={item}
+                            className="text-lg md:text-xl text-slate-400 mb-10 max-w-xl leading-relaxed font-inter font-light"
+                        >
+                            Building end-to-end intelligent applications from frontend to deployment.
+                        </motion.p>
+
+                        <motion.div
+                            variants={item}
+                            className="flex flex-col sm:flex-row items-center gap-6 mb-12"
+                        >
+                            <MagneticButton
+                                href="/urvashi_resume.pdf"
                                 target="_blank"
-                                className="text-slate-500 hover:text-primary transition-all duration-300 hover:scale-125"
+                                className="group relative px-8 py-4 bg-white text-slate-900 font-bold rounded-full overflow-hidden transition-all duration-300 hover:text-white"
                             >
-                                {social.icon}
-                            </a>
-                        ))}
+                                <span className="relative z-10 flex items-center gap-2">
+                                    <FileText size={18} /> Resume
+                                </span>
+                                <div className="absolute inset-0 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                            </MagneticButton>
+
+                            <MagneticButton
+                                href="#contact"
+                                className="group relative px-8 py-4 bg-transparent text-white font-bold rounded-full transition-all duration-300 border border-white/20 hover:border-primary"
+                            >
+                                <span className="relative z-10 flex items-center gap-2">
+                                    Hire Me <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                                </span>
+                            </MagneticButton>
+                        </motion.div>
+
+                        <motion.div
+                            variants={item}
+                            className="flex items-center gap-8"
+                        >
+                            {[
+                                { icon: <Github size={20} />, href: "https://github.com/urvashivankar" },
+                                { icon: <Linkedin size={20} />, href: "https://www.linkedin.com/in/urvashi-vankar-5229bb272/" },
+                                { icon: <Twitter size={20} />, href: "https://x.com/Urvashi16032005" },
+                                { icon: <Instagram size={20} />, href: "https://www.instagram.com/_urvashiii.05" }
+                            ].map((social, i) => (
+                                <a
+                                    key={i}
+                                    href={social.href}
+                                    target="_blank"
+                                    className="text-slate-500 hover:text-primary transition-all duration-300 hover:scale-110"
+                                >
+                                    {social.icon}
+                                </a>
+                            ))}
+                        </motion.div>
                     </motion.div>
-                </motion.div>
-            </div>
+
+                    {/* Right Side: Spline 3D Scene */}
+                    <div className="relative h-[400px] lg:h-[600px] w-full">
+                        <Suspense fallback={<div className="w-full h-full bg-slate-900/10 animate-pulse rounded-3xl" />}>
+                            <div className="w-full h-full transform scale-110 lg:scale-125">
+                                <Spline
+                                    scene="https://prod.spline.design/1pzJQnCWvdZAETah/scene.splinecode"
+                                    className="w-full h-full"
+                                    onLoad={(spline) => {
+                                        // Massive sweep to find and hide the built-in "Get in touch" or "Hire Me" buttons
+                                        [
+                                            'Get in touch', 'button', 'Button', 'Contact', 'Text', 'cta', 'CTA',
+                                            'Group', 'Shape', 'Hire Me', 'HIRE ME', 'Hire', 'Me', 'Hire me',
+                                            'Social', 'Link', 'Follow', 'Email', 'Mail'
+                                        ].forEach(name => {
+                                            const obj = spline.findObjectByName(name);
+                                            if (obj) obj.visible = false;
+                                        });
+                                    }}
+                                />
+                            </div>
+                        </Suspense>
+                    </div>
+                </div >
+            </div >
 
             {/* Subtle Gradient Backdrops */}
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[150px] -z-10 translate-x-1/2 -translate-y-1/2 transition-colors"></div>
+            < div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[150px] -z-10 translate-x-1/2 -translate-y-1/2 transition-colors" ></div >
             <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-secondary/5 rounded-full blur-[120px] -z-10 -translate-x-1/2 translate-y-1/2 transition-colors"></div>
-        </section>
+        </section >
     );
 };
-
-
 
 export default Hero;

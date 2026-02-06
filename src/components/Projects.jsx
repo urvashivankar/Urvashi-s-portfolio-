@@ -73,7 +73,7 @@ const projects = [
 const Projects = () => {
     return (
         <section id="projects" className="py-24 relative overflow-hidden">
-            <div className="container mx-auto px-6">
+            <div className="container mx-auto px-6 md:px-12 lg:px-20">
                 <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
                     <div>
                         <motion.p
@@ -134,50 +134,21 @@ const Projects = () => {
                                     </a>
                                 </div>
 
-                                <h3 className="text-3xl md:text-4xl font-bold text-white mb-8 font-grotesk tracking-tight group-hover:text-primary transition-colors">
+                                <h3 className="text-3xl md:text-4xl font-bold text-white mb-6 font-grotesk tracking-tight group-hover:text-primary transition-colors">
                                     {project.title}
                                 </h3>
 
-                                <div className="space-y-8 flex-grow">
-                                    <div className="grid md:grid-cols-2 gap-8 pt-6 border-t border-white/5">
-                                        <div>
-                                            <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-3">The Problem</p>
-                                            <p className="text-sm text-slate-400 font-inter font-light leading-relaxed">
-                                                {project.problem}
-                                            </p>
-                                        </div>
-                                        <div>
-                                            <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-3">The Solution</p>
-                                            <p className="text-sm text-slate-400 font-inter font-light leading-relaxed italic">
-                                                {project.solution}
-                                            </p>
-                                        </div>
-                                    </div>
+                                <div className="space-y-6 flex-grow">
+                                    <p className="text-slate-400 font-inter font-light leading-relaxed">
+                                        {project.solution.split('.')[0]}.
+                                    </p>
 
-                                    <div className="p-6 bg-white/5 rounded-2xl border border-white/5">
-                                        <div className="flex items-center gap-2 mb-3">
-                                            <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
-                                            <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Technical Challenge</p>
-                                        </div>
-                                        <p className="text-sm text-slate-300 font-inter font-medium">
-                                            {project.challenge}
-                                        </p>
-                                    </div>
-
-                                    <div className="flex flex-col gap-6">
-                                        <div className="flex flex-wrap gap-2">
-                                            {project.tech.map((t) => (
-                                                <span key={t} className="text-[10px] font-bold text-slate-400 border border-white/10 px-3 py-1.5 rounded-lg group-hover:border-primary/30 group-hover:text-primary transition-all">
-                                                    {t}
-                                                </span>
-                                            ))}
-                                        </div>
-
-                                        <div className="pt-6 border-t border-white/5 flex items-center justify-between">
-                                            <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest flex items-center gap-2">
-                                                <span className="w-4 h-[1px] bg-slate-200"></span> Roadmap: {project.future}
-                                            </p>
-                                        </div>
+                                    <div className="flex flex-wrap gap-2">
+                                        {project.tech.map((t) => (
+                                            <span key={t} className="text-[10px] font-bold text-slate-400 border border-white/10 px-3 py-1.5 rounded-lg group-hover:border-primary/30 group-hover:text-primary transition-all">
+                                                {t}
+                                            </span>
+                                        ))}
                                     </div>
                                 </div>
                             </div>

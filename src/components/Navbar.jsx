@@ -25,7 +25,7 @@ const Navbar = () => {
 
     return (
         <nav className={`fixed top-0 w-full z-[999] transition-all duration-700 ${isScrolled ? 'bg-slate-950/80 backdrop-blur-2xl py-4 border-b border-white/10' : 'bg-transparent py-8'}`}>
-            <div className="container mx-auto px-6 flex justify-between items-center">
+            <div className="container mx-auto px-6 md:px-12 lg:px-20 flex justify-between items-center">
                 <a href="#" className="flex items-center gap-3 group">
                     <div className="w-10 h-10 overflow-hidden rounded-xl border border-white/10 group-hover:rotate-12 transition-transform duration-500">
                         <img src={logo} alt="UV" className="w-full h-full object-cover" />
@@ -35,7 +35,6 @@ const Navbar = () => {
                     </span>
                 </a>
 
-                {/* Desktop Links */}
                 <div className="hidden lg:flex items-center gap-10">
                     <div className="flex items-center gap-8">
                         {navLinks.map((link) => (
@@ -50,14 +49,6 @@ const Navbar = () => {
                         ))}
                     </div>
 
-                    <div className="flex items-center gap-6">
-                        <a
-                            href="#contact"
-                            className="px-6 py-2.5 bg-white text-slate-900 text-[10px] font-black uppercase tracking-[0.2em] rounded-full hover:bg-primary hover:text-white transition-all duration-300 flex items-center gap-2"
-                        >
-                            Hire Me <ArrowUpRight size={14} />
-                        </a>
-                    </div>
                 </div>
 
                 {/* Mobile Header Controls */}
