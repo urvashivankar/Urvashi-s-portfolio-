@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { motion } from 'framer-motion';
 import { Github, Box } from 'lucide-react';
 
@@ -25,26 +26,15 @@ const projects = [
         future: "Webcam-based sentiment and body language analysis for non-verbal communication scoring."
     },
     {
-        title: "AUTOMATED AI NEWS",
-        category: "AI Automation",
-        problem: "AI professionals spend hours manually tracking research updates across multiple sources, missing critical developments.",
-        role: "Automation Engineer",
-        solution: "Developed fully autonomous aggregation system using n8n workflow orchestration, OpenAI API for summarization, PostgreSQL for deduplication, and multi-source RSS integration. Delivers curated daily reports without manual intervention.",
-        challenge: "Filtering duplicate high-frequency news across 100+ global RSS feeds while maintaining accuracy.",
-        tech: ["n8n", "OpenAI API", "PostgreSQL", "RSS Feeds"],
-        link: "https://github.com/urvashivankar/daily-news-summary",
-        future: "Voice-automated daily briefings via Telegram/WhatsApp integration."
-    },
-    {
-        title: "AMAZON SALES BI",
-        category: "Full-Stack Analytics",
-        problem: "E-commerce sellers lacked unified visibility into sales performance across regions, leading to poor inventory and pricing decisions.",
-        role: "Data Analytics Developer",
-        solution: "Architected interactive dashboards with Power BI, complex DAX calculations, SQL ETL pipelines, and Amazon Seller Central API integration. Enabled data-driven decisions with real-time KPI tracking.",
-        challenge: "Normalizing inconsistent schemas from multiple Amazon Seller Central exports across regions.",
-        tech: ["Power BI", "DAX", "SQL", "Excel ETL"],
-        link: "https://github.com/urvashivankar",
-        future: "Predictive demand forecasting using Power BI's built-in ML capabilities."
+        title: "ROSHNI ENTERPRISE",
+        category: "Full-Stack MERN",
+        problem: "Requirement for a robust, scalable enterprise management system with dynamic data handling.",
+        role: "Full-Stack Developer",
+        solution: "Built a comprehensive enterprise web application using the MERN stack (MongoDB, Express.js, React, Node.js).",
+        challenge: "Ensuring high availability and secure data management across multiple user roles.",
+        tech: ["MongoDB", "Express", "React", "Node.js"],
+        link: "https://github.com/urvashivankar/roshni-enterprise",
+        future: "Implementation of advanced analytics dashboards and real-time notifications."
     },
     {
         title: "FAKE NEWS DETECTOR",
@@ -58,22 +48,33 @@ const projects = [
         future: "Multi-language support and real-time social media source-reliability scoring."
     },
     {
-        title: "HEALTH-AI SCANNER",
-        category: "Computer Vision",
-        problem: "Radiologists need AI assistance for early-stage diagnostics in high-workload medical imaging environments.",
-        role: "Computer Vision Developer",
-        solution: "Built CNN-based MRI analysis tool using TensorFlow and Keras with OpenCV processing. Specialized visualization layers highlight anomaly regions with confidence markers for high-recall triage.",
-        challenge: "Achieving high recall rates to ensure no potential anomalies missed during medical triage.",
-        tech: ["TensorFlow", "Keras", "OpenCV", "CNN"],
-        link: "https://github.com/urvashivankar/brain-tumor-detection",
-        future: "Federated learning implementation to improve model accuracy while maintaining patient privacy."
+        title: "PROMPT REFINEMENT SYSTEM",
+        category: "AI & Prompt Engineering",
+        problem: "Inefficient and inconsistent AI prompt generation leading to suboptimal LLM outputs.",
+        role: "AI Developer",
+        solution: "Developed an interactive system to systematically refine, test, and optimize prompts for various Large Language Models.",
+        challenge: "Creating a universal framework that adapts to different LLM requirements and context Windows.",
+        tech: ["LLMs", "Prompt Engineering", "React", "Node.js"],
+        link: "https://github.com/urvashivankar/prompt-refinement-system",
+        future: "Integration with additional specialized AI models via API."
+    },
+    {
+        title: "CSE AI AGENT (NEXUSCHAT)",
+        category: "Full-Stack MEAN",
+        problem: "Students and professionals needed an intelligent, context-aware chatbot for specialized academic and CSE assistance.",
+        role: "Full-Stack Developer",
+        solution: "Developed a production-ready AI-powered CSE assistant using the full MEAN stack (MongoDB, Express.js, Angular, Node.js) with real-time Socket.IO and Groq AI integration.",
+        challenge: "Integrating AI seamlessly with full-stack architecture for low-latency, real-time responses.",
+        tech: ["MongoDB", "Express", "Angular", "Node.js"],
+        link: "https://github.com/urvashivankar/Mean-project",
+        future: "Incorporating advanced file-parsing capabilities and deeper contextual memory."
     }
 ];
 
-const Projects = () => {
+const Projects = memo(() => {
     return (
         <section id="projects" className="py-24 relative overflow-hidden">
-            <div className="container mx-auto px-6">
+            <div className="container mx-auto px-6 md:px-12 lg:px-20">
                 <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
                     <div>
                         <motion.p
@@ -128,56 +129,28 @@ const Projects = () => {
                                     <a
                                         href={project.link}
                                         target="_blank"
-                                        className="p-3 rounded-full border border-slate-100 hover:bg-primary hover:text-white hover:border-primary transition-all duration-500"
+                                        rel="noopener noreferrer"
+                                        className="p-3 rounded-full border border-slate-100/10 hover:bg-primary hover:text-white hover:border-primary transition-all duration-500"
                                     >
                                         <Github size={20} />
                                     </a>
                                 </div>
 
-                                <h3 className="text-3xl md:text-4xl font-bold text-white mb-8 font-grotesk tracking-tight group-hover:text-primary transition-colors">
+                                <h3 className="text-3xl md:text-4xl font-bold text-white mb-6 font-grotesk tracking-tight group-hover:text-primary transition-colors">
                                     {project.title}
                                 </h3>
 
-                                <div className="space-y-8 flex-grow">
-                                    <div className="grid md:grid-cols-2 gap-8 pt-6 border-t border-white/5">
-                                        <div>
-                                            <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-3">The Problem</p>
-                                            <p className="text-sm text-slate-400 font-inter font-light leading-relaxed">
-                                                {project.problem}
-                                            </p>
-                                        </div>
-                                        <div>
-                                            <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-3">The Solution</p>
-                                            <p className="text-sm text-slate-400 font-inter font-light leading-relaxed italic">
-                                                {project.solution}
-                                            </p>
-                                        </div>
-                                    </div>
+                                <div className="space-y-6 flex-grow">
+                                    <p className="text-slate-400 font-inter font-light leading-relaxed">
+                                        {project.solution.split('.')[0]}.
+                                    </p>
 
-                                    <div className="p-6 bg-white/5 rounded-2xl border border-white/5">
-                                        <div className="flex items-center gap-2 mb-3">
-                                            <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
-                                            <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Technical Challenge</p>
-                                        </div>
-                                        <p className="text-sm text-slate-300 font-inter font-medium">
-                                            {project.challenge}
-                                        </p>
-                                    </div>
-
-                                    <div className="flex flex-col gap-6">
-                                        <div className="flex flex-wrap gap-2">
-                                            {project.tech.map((t) => (
-                                                <span key={t} className="text-[10px] font-bold text-slate-400 border border-white/10 px-3 py-1.5 rounded-lg group-hover:border-primary/30 group-hover:text-primary transition-all">
-                                                    {t}
-                                                </span>
-                                            ))}
-                                        </div>
-
-                                        <div className="pt-6 border-t border-white/5 flex items-center justify-between">
-                                            <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest flex items-center gap-2">
-                                                <span className="w-4 h-[1px] bg-slate-200"></span> Roadmap: {project.future}
-                                            </p>
-                                        </div>
+                                    <div className="flex flex-wrap gap-2">
+                                        {project.tech.map((t) => (
+                                            <span key={t} className="text-[10px] font-bold text-slate-400 border border-white/10 px-3 py-1.5 rounded-lg group-hover:border-primary/30 group-hover:text-primary transition-all">
+                                                {t}
+                                            </span>
+                                        ))}
                                     </div>
                                 </div>
                             </div>
@@ -187,8 +160,6 @@ const Projects = () => {
             </div>
         </section>
     );
-};
-
-
+});
 
 export default Projects;

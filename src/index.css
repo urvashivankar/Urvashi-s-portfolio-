@@ -24,11 +24,18 @@
   body {
     background-color: var(--bg-main);
     color: var(--text-main);
-    @apply font-inter relative min-h-screen;
-    background-image: var(--overlay-gradient), url('./assets/background_v2.png');
+    @apply font-inter relative min-h-screen max-w-[100vw] overflow-x-hidden;
+    background-image: var(--overlay-gradient), url('./assets/background_v2.webp');
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
+    /* Improve scroll performance on touch devices */
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Responsive typography scaling */
+  html {
+    @apply text-[14px] md:text-[16px];
   }
 
   h1,

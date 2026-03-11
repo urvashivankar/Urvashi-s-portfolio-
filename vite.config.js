@@ -8,4 +8,16 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'vendor-react': ['react', 'react-dom'],
+          'vendor-motion': ['framer-motion'],
+          'vendor-spline': ['@splinetool/react-spline'],
+          'vendor-ui': ['lucide-react', 'lenis', 'clsx', 'tailwind-merge'],
+        }
+      }
+    }
+  }
 })

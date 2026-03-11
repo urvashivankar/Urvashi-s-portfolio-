@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { motion } from 'framer-motion';
 import { FileCode, BarChart, Binary, Code, ArrowRight } from 'lucide-react';
 
@@ -10,10 +11,10 @@ const resumes = [
     }
 ];
 
-const Resumes = () => {
+const Resumes = memo(() => {
     return (
         <section className="py-24 relative overflow-hidden">
-            <div className="container mx-auto px-6">
+            <div className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10">
                 <div className="mb-20 text-center">
                     <motion.p
                         initial={{ opacity: 0, y: 10 }}
@@ -30,7 +31,7 @@ const Resumes = () => {
                         transition={{ delay: 0.1 }}
                         className="text-3xl md:text-5xl font-grotesk font-bold text-white tracking-tighter leading-none"
                     >
-                        Specialized <span className="text-gradient">Resume.</span>
+                        <span className="text-gradient">Resume.</span>
                     </motion.h2>
                 </div>
 
@@ -43,7 +44,7 @@ const Resumes = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: i * 0.1 }}
-                                className="glass p-10 flex flex-col items-center text-center group hover:bg-slate-900/60 transition-all duration-500 relative border-none shadow-sm hover:shadow-xl"
+                                className="glass p-10 flex flex-col items-center text-center group hover:bg-slate-900/60 transition-all duration-500 relative border-none shadow-sm hover:shadow-xl w-full"
                             >
                                 <div className={`w-20 h-20 ${resume.color} rounded-3xl flex items-center justify-center text-white mb-8 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}>
                                     {resume.icon}
@@ -67,7 +68,7 @@ const Resumes = () => {
             </div>
         </section>
     );
-};
+});
 
 
 

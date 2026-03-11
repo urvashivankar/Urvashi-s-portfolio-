@@ -5,35 +5,35 @@ const skills = [
     {
         category: "Frontend Development",
         icon: <Globe size={20} />,
-        items: ["React", "Next.js", "Framer Motion", "Tailwind CSS", "JavaScript", "HTML/CSS"],
-        description: "Modern, responsive web applications with seamless AI integration and premium UX.",
+        items: ["React", "Next.js", "Framer Motion", "Tailwind CSS", "JavaScript"],
+        description: "Responsive web applications with seamless AI integration.",
         primary: false
     },
     {
         category: "Backend Development",
         icon: <Database size={20} />,
-        items: ["FastAPI", "Node.js", "Express.js", "PostgreSQL", "Supabase", "REST APIs"],
-        description: "High-performance APIs and server-side logic for scalable AI applications."
+        items: ["FastAPI", "Node.js", "PostgreSQL", "Supabase", "REST APIs"],
+        description: "Scalable server-side logic and high-performance APIs."
     },
     {
         category: "AI Integration",
         icon: <Brain size={20} />,
-        items: ["LLM APIs", "Gemini", "Llama Vision", "RAG Systems", "Prompt Engineering", "Python"],
-        description: "Production AI systems with LLMs, vision models, and intelligent automation.",
+        items: ["LLM APIs", "Gemini", "RAG Systems", "Prompt Engineering", "Python"],
+        description: "Production-ready AI systems with intelligent automation.",
         primary: true
     },
     {
         category: "Deployment & DevOps",
         icon: <Zap size={20} />,
         items: ["Docker", "Git", "Vercel", "Render", "n8n", "MLOps"],
-        description: "Containerization, CI/CD workflows, and production deployment pipelines."
+        description: "CI/CD workflows and production deployment pipelines."
     }
 ];
 
 const Skills = () => {
     return (
         <section id="skills" className="py-24 relative bg-slate-900/20">
-            <div className="container mx-auto px-6 text-center lg:text-left">
+            <div className="container mx-auto px-6 md:px-12 lg:px-20 text-center lg:text-left">
                 <div className="mb-20 flex flex-col lg:flex-row justify-between items-end gap-10">
                     <div className="max-w-2xl">
                         <motion.p
@@ -59,19 +59,19 @@ const Skills = () => {
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
-                        className="glass px-6 py-4 flex items-center gap-4"
+                        className="glass px-6 py-4 flex flex-col sm:flex-row items-center sm:items-start lg:items-center gap-4 text-center sm:text-left mx-auto lg:mx-0 w-full md:w-auto"
                     >
-                        <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+                        <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary shrink-0">
                             <Cpu size={20} className="animate-pulse" />
                         </div>
-                        <div className="text-left">
+                        <div>
                             <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Currently Learning</p>
                             <p className="text-xs text-white font-medium">AI System Design & Scalable Architectures</p>
                         </div>
                     </motion.div>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/5 border border-slate-200 overflow-hidden rounded-3xl">
+                <div className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-px md:bg-white/5 md:border md:border-slate-200 overflow-hidden rounded-3xl">
                     {skills.map((skill, index) => (
                         <motion.div
                             key={index}
@@ -79,10 +79,10 @@ const Skills = () => {
                             whileInView={{ opacity: 1 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1, duration: 1 }}
-                            className={`bg-slate-950 p-10 flex flex-col group relative hover:z-10 ${skill.primary ? 'ring-2 ring-primary ring-inset' : ''}`}
+                            className={`bg-slate-950 p-8 md:p-10 flex flex-col group relative hover:z-10 rounded-3xl md:rounded-none border border-white/5 md:border-none ${skill.primary ? 'ring-2 ring-primary ring-inset' : ''}`}
                         >
                             {/* Hover Glow */}
-                            <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/[0.03] transition-colors duration-500"></div>
+                            <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/[0.03] transition-colors duration-500 rounded-3xl md:rounded-none"></div>
 
                             <div className="relative z-10 flex flex-col h-full">
                                 <div className="flex justify-between items-start mb-8">
@@ -98,11 +98,11 @@ const Skills = () => {
                                     {skill.category}
                                 </h3>
 
-                                <p className="text-slate-400 text-sm mb-8 leading-relaxed font-light">
+                                <p className="text-slate-400 text-sm mb-8 leading-relaxed font-light text-left">
                                     {skill.description}
                                 </p>
 
-                                <div className="flex flex-wrap gap-2 mt-auto">
+                                <div className="flex flex-wrap gap-2 mt-auto justify-start">
                                     {skill.items.map((item) => (
                                         <span
                                             key={item}
