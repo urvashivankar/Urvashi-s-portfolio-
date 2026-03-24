@@ -1,76 +1,58 @@
-import { useEffect, Suspense, lazy } from 'react';
-import Lenis from 'lenis';
+import React, { useEffect } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import About from './components/About';
+import Experience from './components/Experience';
+import Skills from './components/Skills';
+import Projects from './components/Projects';
+import Contact from './components/Contact';
+import StarField from './components/StarField';
 import Cursor from './components/Cursor';
-
-// Lazy loading below-the-fold components for performance
-const About = lazy(() => import('./components/About'));
-const Experience = lazy(() => import('./components/Experience'));
-const Skills = lazy(() => import('./components/Skills'));
-const Projects = lazy(() => import('./components/Projects'));
-const Resumes = lazy(() => import('./components/Resumes'));
-const Contact = lazy(() => import('./components/Contact'));
-
-// Fallback skeleton loader
-const SectionLoader = () => (
-  <div className="w-full h-[50vh] flex items-center justify-center bg-slate-950/50 animate-pulse">
-    <div className="w-12 h-12 rounded-full border-4 border-primary/30 border-t-primary animate-spin"></div>
-  </div>
-);
+import ThemeToggle from './components/ThemeToggle';
+import Lenis from 'lenis';
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
   useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      orientation: 'vertical',
-      gestureOrientation: 'vertical',
-      smoothWheel: true,
-      wheelMultiplier: 1,
-      smoothTouch: false, // Keep false to allow native touch scrolling which is generally preferred on mobile
-      touchMultiplier: 2,
-      infinite: false,
-    });
-
-    let rafId;
+    const lenis = new Lenis();
 
     function raf(time) {
       lenis.raf(time);
-      rafId = requestAnimationFrame(raf);
+      requestAnimationFrame(raf);
     }
 
-    rafId = requestAnimationFrame(raf);
+    requestAnimationFrame(raf);
 
     return () => {
-      cancelAnimationFrame(rafId);
       lenis.destroy();
     };
   }, []);
 
   return (
-    <div className="min-h-screen selection:bg-primary/30 selection:text-primary transition-colors duration-500 overflow-x-hidden">
+    <div className="relative min-h-screen">
+      <StarField />
+      
       <Cursor />
       <Navbar />
-      <main>
-        {/* Hero is above the fold, so it's not lazy loaded */}
+      <main className="relative z-10">
         <Hero />
-
-        <Suspense fallback={<SectionLoader />}>
-          <About />
-          <Experience />
-          <Skills />
-          <Projects />
-          <Resumes />
-          <Contact />
-        </Suspense>
+        <About />
+        <Experience />
+        <Skills />
+        <Projects />
+        <Contact />
       </main>
 
-      <footer className="py-12 border-t border-white/10 text-center relative z-10 w-full">
-        <div className="container mx-auto px-6 text-slate-500 text-sm font-inter">
-          <p>© 2026 Urvashi Vankar. Building production-ready AI applications.</p>
-        </div>
+      {/* Premium Grain Texture Overlay */}
+      <div className="fixed inset-0 pointer-events-none z-[100] opacity-[0.03] contrast-150 brightness-150" 
+           style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }}>
+      </div>
+      <footer className="py-10 text-center text-slate-500 border-t border-white/5 backdrop-blur-sm">
+        <p className="text-sm font-inter">© {new Date().getFullYear()} Urvashi Vankar. Built with React & Framer Motion.</p>
       </footer>
+      <ThemeToggle />
+      <Analytics />
     </div>
   );
 }

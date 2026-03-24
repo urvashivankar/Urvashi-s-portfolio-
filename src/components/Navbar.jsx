@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import logo from '../assets/logo.webp';
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -23,15 +22,12 @@ const Navbar = () => {
     ];
 
     return (
-        <nav className={`fixed top-0 w-full z-[999] transition-all duration-700 ${isScrolled ? 'bg-slate-950/80 backdrop-blur-2xl py-4 border-b border-white/10' : 'bg-transparent py-8'}`}>
+        <nav className={`fixed top-0 w-full z-[999] transition-all duration-700 ${isScrolled ? 'bg-[#020617]/80 backdrop-blur-xl py-4 border-b border-white/5 shadow-[0_4px_30px_rgba(0,0,0,0.1)]' : 'bg-transparent py-8'}`}>
             <div className="container mx-auto px-6 md:px-12 lg:px-20 flex justify-between items-center">
-                <a href="#" className="flex items-center gap-3 group">
-                    <div className="w-10 h-10 overflow-hidden rounded-xl border border-white/10 group-hover:rotate-12 transition-transform duration-500">
-                        <img src={logo} alt="UV" loading="eager" decoding="async" className="w-full h-full object-cover" />
+                <a href="#" className="flex items-center gap-2 group">
+                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-500 to-purple-600 flex items-center justify-center font-black text-white text-sm shadow-[0_0_15px_rgba(168,85,247,0.4)] group-hover:scale-110 transition-transform duration-300">
+                        UV
                     </div>
-                    <span className="text-xl font-bold font-grotesk text-white tracking-tighter">
-                        Urvashi's <span className="text-primary italic">Portfolio.</span>
-                    </span>
                 </a>
 
                 <div className="hidden lg:flex items-center gap-10">
@@ -62,21 +58,25 @@ const Navbar = () => {
             <AnimatePresence>
                 {isMenuOpen && (
                     <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        exit={{ opacity: 0, height: 0 }}
-                        className="absolute top-full left-0 w-full bg-slate-950 border-b border-white/10 overflow-hidden lg:hidden"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 top-0 left-0 w-full h-screen bg-[#020617]/95 backdrop-blur-2xl z-[998] lg:hidden"
                     >
-                        <div className="flex flex-col p-8 gap-6">
-                            {navLinks.map((link) => (
-                                <a
+                        <div className="flex flex-col h-full justify-center px-12 gap-8">
+                            {navLinks.map((link, i) => (
+                                <motion.a
                                     key={link.name}
+                                    initial={{ opacity: 0, x: -20 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ delay: i * 0.1 }}
                                     href={link.href}
                                     onClick={() => setIsMenuOpen(false)}
-                                    className="text-xl font-bold font-grotesk text-slate-400 hover:text-white flex justify-between items-center"
+                                    className="text-3xl font-bold font-grotesk text-white/50 hover:text-white flex justify-between items-center group"
                                 >
-                                    {link.name} <ArrowUpRight size={16} />
-                                </a>
+                                    <span className="group-hover:text-primary transition-colors underline-offset-8 group-hover:underline">{link.name}</span> 
+                                    <ArrowUpRight size={24} className="group-hover:text-primary" />
+                                </motion.a>
                             ))}
                         </div>
                     </motion.div>

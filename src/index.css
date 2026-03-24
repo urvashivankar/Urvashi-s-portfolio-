@@ -1,23 +1,26 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #0ea5e9;
-  --color-secondary: #6366f1;
+  --color-primary: #a855f7;
+  --color-secondary: #3b82f6;
+  --color-accent: #f472b6;
+  --color-galaxy-dark: #020617;
   --font-grotesk: "Space Grotesk", sans-serif;
   --font-inter: "Inter", sans-serif;
 }
 
-/* Dark theme only - optimized for readability */
+/* Galaxy theme - optimized for depth and neon accents */
 :root {
   --bg-main: #020617;
-  --text-main: #f1f5f9;
+  --text-main: #f8fafc;
   --text-muted: #94a3b8;
   --text-dimmed: #64748b;
-  --glass-bg: rgba(15, 23, 42, 0.7);
+  --glass-bg: rgba(15, 23, 42, 0.4);
   --glass-border: rgba(255, 255, 255, 0.1);
   --card-bg: #0f172a;
-  --shadow-color: rgba(0, 0, 0, 0.4);
-  --overlay-gradient: linear-gradient(to bottom, rgba(2, 6, 23, 0.95), rgba(15, 23, 42, 0.97));
+  --shadow-color: rgba(0, 0, 0, 0.8);
+  --overlay-gradient: radial-gradient(circle at top right, rgba(168, 85, 247, 0.15), transparent),
+                      radial-gradient(circle at bottom left, rgba(59, 130, 246, 0.15), transparent);
 }
 
 @layer base {
@@ -25,10 +28,6 @@
     background-color: var(--bg-main);
     color: var(--text-main);
     @apply font-inter relative min-h-screen max-w-[100vw] overflow-x-hidden;
-    background-image: var(--overlay-gradient), url('./assets/background_v2.webp');
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
     /* Improve scroll performance on touch devices */
     -webkit-overflow-scrolling: touch;
   }

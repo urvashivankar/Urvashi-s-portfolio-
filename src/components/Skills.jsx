@@ -40,7 +40,7 @@ const Skills = () => {
                             initial={{ opacity: 0, y: 10 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4"
+                            className="text-primary font-bold tracking-[0.3em] uppercase text-[10px] md:text-xs mb-4"
                         >
                             Capabilities
                         </motion.p>
@@ -59,28 +59,30 @@ const Skills = () => {
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
-                        className="glass px-6 py-4 flex flex-col sm:flex-row items-center sm:items-start lg:items-center gap-4 text-center sm:text-left mx-auto lg:mx-0 w-full md:w-auto"
+                        className="glass px-5 md:px-6 py-3 md:py-4 flex flex-col sm:flex-row items-center sm:items-start lg:items-center gap-3 md:gap-4 text-center sm:text-left mx-auto lg:mx-0 w-full md:w-auto"
                     >
-                        <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary shrink-0">
-                            <Cpu size={20} className="animate-pulse" />
+                        <div className="w-8 h-8 md:w-10 md:h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary shrink-0">
+                            <Cpu size={18} className="animate-pulse" />
                         </div>
                         <div>
                             <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Currently Learning</p>
-                            <p className="text-xs text-white font-medium">AI System Design & Scalable Architectures</p>
+                            <p className="text-xs text-white font-medium">Django &bull; Advanced AI &bull; System Design</p>
                         </div>
                     </motion.div>
                 </div>
 
-                <div className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-px md:bg-white/5 md:border md:border-slate-200 overflow-hidden rounded-3xl">
+                <div className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 overflow-hidden rounded-3xl">
                     {skills.map((skill, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ delay: index * 0.1, duration: 1 }}
-                            className={`bg-slate-950 p-8 md:p-10 flex flex-col group relative hover:z-10 rounded-3xl md:rounded-none border border-white/5 md:border-none ${skill.primary ? 'ring-2 ring-primary ring-inset' : ''}`}
+                            transition={{ delay: index * 0.1, duration: 0.8 }}
+                            whileHover={{ y: -10 }}
+                            className={`glass p-6 md:p-10 flex flex-col group relative rounded-3xl border border-white/5 ${skill.primary ? 'ring-2 ring-primary/30' : ''}`}
                         >
+
                             {/* Hover Glow */}
                             <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/[0.03] transition-colors duration-500 rounded-3xl md:rounded-none"></div>
 

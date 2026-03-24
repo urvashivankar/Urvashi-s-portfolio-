@@ -5,9 +5,9 @@ import { Github, Box } from 'lucide-react';
 const projects = [
     {
         title: "AQUA GUARDIAN",
-        category: "GovTech Full-Stack AI",
+        category: "GovTech Full Stack AI",
         problem: "Government agencies manually validated thousands of citizen water pollution reports, causing 3-5 day response delays for critical environmental issues.",
-        role: "Full-Stack AI Developer",
+        role: "Full Stack AI Developer",
         solution: "Built complete AI validation system with React frontend (real-time updates), FastAPI backend (async processing), Llama Vision integration for automatic image analysis, and Supabase for scalable storage. Reduced validation time by 70%.",
         challenge: "Handling concurrent image uploads while maintaining <2s AI response time and ensuring government-grade audit trails.",
         tech: ["React", "FastAPI", "Llama Vision", "Supabase", "Docker"],
@@ -16,9 +16,9 @@ const projects = [
     },
     {
         title: "AI MOCK INTERVIEW",
-        category: "Full-Stack GenAI",
+        category: "Full Stack GenAI",
         problem: "Job seekers needed realistic interview practice with instant feedback, but human mock interviews are expensive and scheduling-dependent.",
-        role: "Full-Stack AI Developer",
+        role: "Full Stack AI Developer",
         solution: "Architected production interview platform with Next.js frontend, voice recording UI, Gemini 1.5 Flash integration for conversational AI, and real-time scoring algorithms. Achieved <2s response latency with multi-turn context management.",
         challenge: "Maintaining conversation context across multi-turn interviews while processing voice input in real-time.",
         tech: ["Next.js", "Gemini AI", "Voice-to-Text", "Framer Motion"],
@@ -27,9 +27,9 @@ const projects = [
     },
     {
         title: "ROSHNI ENTERPRISE",
-        category: "Full-Stack MERN",
+        category: "Full Stack MERN",
         problem: "Requirement for a robust, scalable enterprise management system with dynamic data handling.",
-        role: "Full-Stack Developer",
+        role: "Full Stack Developer",
         solution: "Built a comprehensive enterprise web application using the MERN stack (MongoDB, Express.js, React, Node.js).",
         challenge: "Ensuring high availability and secure data management across multiple user roles.",
         tech: ["MongoDB", "Express", "React", "Node.js"],
@@ -60,9 +60,9 @@ const projects = [
     },
     {
         title: "CSE AI AGENT (NEXUSCHAT)",
-        category: "Full-Stack MEAN",
+        category: "Full Stack MEAN",
         problem: "Students and professionals needed an intelligent, context-aware chatbot for specialized academic and CSE assistance.",
-        role: "Full-Stack Developer",
+        role: "Full Stack Developer",
         solution: "Developed a production-ready AI-powered CSE assistant using the full MEAN stack (MongoDB, Express.js, Angular, Node.js) with real-time Socket.IO and Groq AI integration.",
         challenge: "Integrating AI seamlessly with full-stack architecture for low-latency, real-time responses.",
         tech: ["MongoDB", "Express", "Angular", "Node.js"],
@@ -78,27 +78,29 @@ const Projects = memo(() => {
                 <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
                     <div>
                         <motion.p
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
+                            initial={{ opacity: 0, x: -50, filter: 'blur(10px)' }}
+                            whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
+                            viewport={{ once: true, margin: "-100px" }}
+                            transition={{ duration: 1, type: "spring", bounce: 0.3 }}
                             className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4"
                         >
                             Selection
                         </motion.p>
                         <motion.h2
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.1 }}
+                            initial={{ opacity: 0, x: -50, filter: 'blur(10px)' }}
+                            whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
+                            viewport={{ once: true, margin: "-100px" }}
+                            transition={{ duration: 1, type: "spring", bounce: 0.3, delay: 0.1 }}
                             className="text-3xl md:text-5xl font-grotesk font-bold text-white tracking-tighter"
                         >
                             Featured <br /><span className="text-gradient">Projects.</span>
                         </motion.h2>
                     </div>
                     <motion.div
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
+                        initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
+                        whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 1, type: "spring", bounce: 0.3, delay: 0.2 }}
                         className="max-w-md text-slate-400 text-lg md:text-right font-inter font-light"
                     >
                         A selection of production-ready AI applications demonstrating end-to-end development: frontend to backend, AI integration to deployment.
@@ -109,14 +111,16 @@ const Projects = memo(() => {
                     {projects.map((project, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1, duration: 0.6 }}
-                            className="group relative overflow-hidden rounded-[2rem] border border-white/5 shadow-sm hover:shadow-2xl transition-all duration-700"
+                            initial={{ opacity: 0, y: 120, scale: 0.8, rotateX: 15, filter: 'blur(20px)' }}
+                            whileInView={{ opacity: 1, y: 0, scale: 1, rotateX: 0, filter: 'blur(0px)' }}
+                            viewport={{ once: true, margin: "-100px" }}
+                            transition={{ duration: 1.2, type: "spring", bounce: 0.3, delay: index * 0.15 }}
+                            whileHover={{ y: -15, scale: 1.02, transition: { duration: 0.4 } }}
+                            className="group relative overflow-hidden rounded-[2rem] glass border border-white/5 hover:border-primary/50 shadow-lg hover:shadow-[0_0_50px_rgba(168,85,247,0.2)] transition-all duration-700"
                         >
-                            <div className="absolute inset-0 bg-slate-950 transition-colors duration-500"></div>
-                            <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.02] to-secondary/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                            <div className="absolute inset-0 bg-slate-950/40 transition-colors duration-500"></div>
+                            <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.05] to-secondary/[0.05] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+
 
                             <div className="relative p-8 md:p-12 z-10 flex flex-col h-full">
                                 <div className="flex justify-between items-start mb-8">

@@ -35,7 +35,7 @@ const Contact = () => {
     };
 
     return (
-        <section id="contact" className="py-24 relative overflow-hidden bg-slate-100/30">
+        <section id="contact" className="py-24 relative overflow-hidden bg-transparent">
             <div className="container mx-auto px-6 md:px-12 lg:px-20">
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
@@ -50,7 +50,7 @@ const Contact = () => {
                             Let's <span className="text-gradient">Connect.</span>
                         </h2>
                         <p className="text-slate-400 text-lg md:text-xl mb-12 max-w-md font-inter font-light leading-relaxed">
-                            Open to <strong className="text-white">internships, collaborations & real world projects</strong>. Let's build something that matters.
+                            Open to <strong className="text-white">internships, collaborations & real world projects</strong>. Let's build something that matters in this universe.
                         </p>
 
                         <div className="space-y-4">
@@ -59,17 +59,18 @@ const Contact = () => {
                                 { icon: <Linkedin size={20} />, label: "LinkedIn", text: "urvashi-vankar", href: "https://www.linkedin.com/in/urvashi-vankar-5229bb272" },
                                 { icon: <GithubIcon size={20} />, label: "GitHub", text: "@urvashivankar", href: "https://github.com/urvashivankar" }
                             ].map((item, i) => (
-                                <a key={i} href={item.href} target="_blank" className="flex items-center gap-6 glass p-6 border-none hover:bg-white transition-all shadow-sm">
-                                    <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center text-slate-500 group-hover:text-primary group-hover:bg-primary/10 transition-all">
+                                <a key={i} href={item.href} target="_blank" className="flex items-center gap-6 glass p-6 border-none hover:bg-white/5 transition-all shadow-sm group">
+                                    <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center text-slate-400 group-hover:text-primary group-hover:bg-primary/10 transition-all">
                                         {item.icon}
                                     </div>
                                     <div>
                                         <p className="text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-1">{item.label}</p>
-                                        <span className="font-medium text-slate-600 group-hover:text-white transition-colors">{item.text}</span>
+                                        <span className="font-medium text-slate-300 group-hover:text-white transition-colors">{item.text}</span>
                                     </div>
                                 </a>
                             ))}
                         </div>
+
                     </motion.div>
 
                     <motion.div
@@ -147,7 +148,7 @@ const Contact = () => {
                                     <button
                                         type="submit"
                                         disabled={status === 'loading'}
-                                        className="w-full py-5 bg-white text-slate-900 font-black uppercase tracking-[0.2em] text-[10px] rounded-xl hover:bg-primary transition-all flex items-center justify-center gap-4 group disabled:opacity-50 disabled:cursor-not-allowed"
+                                        className="w-full py-5 bg-gradient-to-r from-primary to-secondary text-white font-black uppercase tracking-[0.2em] text-[10px] rounded-xl hover:shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all flex items-center justify-center gap-4 group disabled:opacity-50 disabled:cursor-not-allowed"
                                     >
                                         {status === 'loading' ? (
                                             <>Processing <Loader2 size={18} className="animate-spin" /></>
@@ -155,6 +156,7 @@ const Contact = () => {
                                             <>Send Initiative <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" /></>
                                         )}
                                     </button>
+
                                 </form>
                             )}
                         </AnimatePresence>
