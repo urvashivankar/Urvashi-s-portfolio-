@@ -1,4 +1,4 @@
-# 🚀 Urvashi Vankar | Full Stack AI Developer Portfolio
+#  Urvashi Vankar | Full Stack AI Developer Portfolio
 
 [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
@@ -9,18 +9,14 @@ A premium, high-performance portfolio showcasing full-stack AI development exper
 
 ---
 
-## 🌟 Live Demo
+##  Live Demo
 🔗 **[View live portfolio here](https://urvashi-portfolio.vercel.app/)** *(Update with your link)*
 
 ---
 
-## 📸 Preview
-![Portfolio Hero Section](https://raw.githubusercontent.com/urvashivankar/Urvashi-portfolio/main/public/preview-hero.png)
-*Placeholder for your portfolio screenshot*
 
----
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 ### **Core Frontend**
 - **React 19**: Modern UI component architecture.
@@ -38,17 +34,8 @@ A premium, high-performance portfolio showcasing full-stack AI development exper
 
 ---
 
-## ✨ Key Features
 
-- 🌌 **Immersive 3D Hero**: Interactive tech-stack orbit powered by Spline and Framer Motion.
-- 💎 **Glassmorphism Design**: Elegant UI with frosted glass effects and dynamic depth.
-- 📱 **Fully Responsive**: Optimized for every screen size, from mobile devices to 4K displays.
-- 🎓 **Chronological Journey**: Detailed sections for work experience and academic achievements.
-- 🚀 **Performance Optimized**: Lazy loading of heavy assets and memoized components for 60FPS interactions.
-
----
-
-## 🚀 Getting Started
+##  Getting Started
 
 ### 1. Clone the repository
 ```bash
@@ -70,7 +57,7 @@ The application will be available at `http://localhost:5173`.
 
 ---
 
-## 📂 Folder Structure
+##  Folder Structure
 
 ```text
 ├── public/              # Static assets & PDF resumes
@@ -86,7 +73,7 @@ The application will be available at `http://localhost:5173`.
 
 ---
 
-## 🎨 Customization
+##  Customization
 
 To personalize this portfolio:
 1. **Details**: Update info in `src/components/Experience.jsx`, `About.jsx`, and `Hero.jsx`.
@@ -108,25 +95,8 @@ The project is pre-configured for **Vercel** or **Netlify**.
 
 ---
 
-## 🤝 Contributing
-
-Contributions are welcome! If you have suggestions for improvement:
-
-1. Fork the Project.
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`).
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`).
-4. Push to the Branch (`git push origin feature/AmazingFeature`).
-5. Open a Pull Request.
-
----
 
 ## ⚖️ License
 Distributed under the MIT License. See `LICENSE` for more information.
 
----
 
-## 📬 Contact
-
-**Urvashi Vankar** - [Your Email](mailto:your.email@example.com)
-
-Project Link: [https://github.com/urvashivankar/Urvashi-portfolio](https://github.com/urvashivankar/Urvashi-portfolio)
