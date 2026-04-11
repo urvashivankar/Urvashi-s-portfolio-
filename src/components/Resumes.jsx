@@ -53,8 +53,13 @@ const Resumes = memo(() => {
                                 <p className="text-sm text-slate-400 mb-10 leading-relaxed font-inter font-light">{resume.desc}</p>
 
                                 <a
+<<<<<<< HEAD
                                     href="/Fullstack_resume.pdf"
                                     download="Urvashi_FullStack_Resume.pdf"
+=======
+                                    href="/urvashi_resume.pdf"
+                                    download="Urvashi_Vankar_Resume.pdf"
+>>>>>>> 3eac06802c2c9b556f11ce88f15367b0054e73f9
                                     className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-primary group-hover:text-white transition-colors mt-auto group/btn"
                                 >
                                     Download PDF <ArrowRight size={14} className="group-hover/btn:translate-x-2 transition-transform" />

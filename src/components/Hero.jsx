@@ -133,7 +133,11 @@ const OrbitRing = () => {
     );
 };
 
+<<<<<<< HEAD
 const MagneticButton = ({ children, className, href, target, ...props }) => {
+=======
+const MagneticButton = ({ children, className, href, target }) => {
+>>>>>>> 3eac06802c2c9b556f11ce88f15367b0054e73f9
     const ref = useRef(null);
     const x = useMotionValue(0);
     const y = useMotionValue(0);
@@ -167,7 +171,10 @@ const MagneticButton = ({ children, className, href, target, ...props }) => {
             onMouseLeave={handleMouseLeave}
             style={{ x: mouseX, y: mouseY }}
             className={className}
+<<<<<<< HEAD
             {...props}
+=======
+>>>>>>> 3eac06802c2c9b556f11ce88f15367b0054e73f9
         >
             {children}
         </motion.a>
@@ -331,8 +338,12 @@ const Hero = memo(() => {
                                 </MagneticButton>
 
                                 <MagneticButton
+<<<<<<< HEAD
                                     href="/Fullstack_resume.pdf"
                                     download="Urvashi_FullStack_Resume.pdf"
+=======
+                                    href="/Fullstack_urvashi_RESUME.pdf"
+>>>>>>> 3eac06802c2c9b556f11ce88f15367b0054e73f9
                                     target="_blank"
                                     className="group flex items-center gap-2 px-6 py-3 rounded-full border border-white/20 text-white text-xs font-bold tracking-[0.15em] uppercase hover:bg-white/10 hover:border-white/40 transition-all"
                                 >

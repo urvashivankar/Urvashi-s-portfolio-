@@ -4,6 +4,7 @@ import { Github, ExternalLink, Box, ChevronLeft, ChevronRight, Sparkles } from '
 
 const projects = [
     {
+<<<<<<< HEAD
         title: "Developer Portfolio CMS",
         category: "Full Stack",
         solution: "A production-ready CMS to manage portfolio content with a Django backend and dynamic React/Vite frontend integration.",
@@ -14,6 +15,8 @@ const projects = [
         isFeatured: true
     },
     {
+=======
+>>>>>>> 3eac06802c2c9b556f11ce88f15367b0054e73f9
         title: "AQUA GUARDIAN",
         category: "GovTech • AI",
         solution: "A comprehensive water quality monitoring system that empowers citizens to report pollution and enables authorities to respond effectively. Users can upload images of polluted water bodies, and the system automatically detects contamination using AI, logs the location, and generates alerts for immediate action.",
@@ -242,8 +245,12 @@ const Projects = memo(() => {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
+<<<<<<< HEAD
     const totalProjects = projects.length + 1; // +1 for "View All" card
     const totalPages = Math.ceil(totalProjects / visibleCards);
+=======
+    const totalPages = Math.ceil(projects.length / visibleCards);
+>>>>>>> 3eac06802c2c9b556f11ce88f15367b0054e73f9
 
     const paginate = (newDirection) => {
         setPage((prev) => {
@@ -254,8 +261,12 @@ const Projects = memo(() => {
         });
     };
 
+<<<<<<< HEAD
     const displayIndices = Array.from({ length: visibleCards }, (_, i) => page * visibleCards + i)
         .filter(idx => idx < totalProjects);
+=======
+    const displayProjects = projects.slice(page * visibleCards, (page + 1) * visibleCards);
+>>>>>>> 3eac06802c2c9b556f11ce88f15367b0054e73f9
 
     return (
         <section id="projects" className="py-32 relative overflow-hidden bg-slate-950">
@@ -328,6 +339,7 @@ const Projects = memo(() => {
                             exit={{ opacity: 0, transition: { duration: 0.3 } }}
                             className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
                         >
+<<<<<<< HEAD
                             {displayIndices.map((idx) => {
                                 if (idx < projects.length) {
                                     return <ProjectCard key={projects[idx].title} project={projects[idx]} index={idx % visibleCards} />;
@@ -358,6 +370,11 @@ const Projects = memo(() => {
                                     );
                                 }
                             })}
+=======
+                            {displayProjects.map((project, idx) => (
+                                <ProjectCard key={project.title} project={project} index={idx} />
+                            ))}
+>>>>>>> 3eac06802c2c9b556f11ce88f15367b0054e73f9
                         </motion.div>
                     </AnimatePresence>
                 </div>
