@@ -9,12 +9,6 @@ A premium, high-performance portfolio showcasing full-stack AI development exper
 
 ---
 
-##  Live Demo
-🔗 **[View live portfolio here](https://urvashi-portfolio.vercel.app/)**
-
----
-
-
 
 ##  Tech Stack
 
